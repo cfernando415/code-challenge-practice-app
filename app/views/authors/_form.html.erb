@@ -1,0 +1,18 @@
+<% if @author.errors.any? %>
+<div id="error_explanation">
+  <ul>
+  <% @author.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+</div>
+<% end %>
+<ul style="list-style-type:none">
+<%= form_for @author do |f| %>
+<li><%= f.label :name %></li>
+<li><%= f.text_field :name%></li>
+<li><%= f.label :birth_year%></li>
+<li><%= f.text_field :birth_year%></li>
+<li><%= f.submit%></li>
+<% end %>
+</ul>
